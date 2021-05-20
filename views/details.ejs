@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <header></header>
+    <main>
+
+
+   <%suhaib.forEach(data =>{ %>
+
+    <div>
+
+<h1><%=data.name %></h1>
+<img src="<%=data.image %>" alt="">
+<p><%=data.house %></p>
+<p><%=data.actor %></p>
+
+    </div>
+    <form action="/update/<%=data.id %>?_method=PUT" method="POST">
+  <input type="text" name="name" value="<%=data.name %>">
+  <input type="text" name="image" value="<%=data.house %>">
+  <input type="text" name="house" value="<%=data.image %>">
+  <input type="text" name="alive" value="<%=data.actor %>">
+
+  <button type="submit">update</button>
+
+    </form>
+    <form action="/delete/<%=data.id %>?_method=DELETE" method="POST">
+        <BUtton type="submit">DELETE</BUtton>
+    
+    </form>
+  
+  <% }) %>
+
+
+
+    </main>
+    
+</body>
+</html>
